@@ -1,0 +1,212 @@
+/* globals */
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+:root {
+  --main-color: #1a8fff;
+  --text-color: #777;
+  --text-color-light: #ccc;
+  --border-color: #eee;
+  --bg-color: #f9f9f9;
+  --neutral-color: #fff;
+  --header-color: #00ab6b;
+  --selected-date-bg-color: #00ab6b;
+  --current-date-bg-color: #00ab6b;
+
+  --widget-width: 720px;
+  --header-height: 150px;
+  --cell-height: 50px;
+}
+/* It can be handy to use native variables to provide widget user a way to configure how calendar should look */
+/* But SASS functions can't modify native variables (lighten, darken etc), because preprocessors process CSS before native variables calculated */
+$selected-date-bg-color: #00ab6b;
+$bg-color: #f9f9f9;
+
+
+/* Reset box-sizing for each element */
+/* TODO: Refactor in production code using mixins */
+* {
+  box-sizing: border-box;
+}
+
+/* helpers */
+.borders {
+  border: 1px solid var(--border-color);
+}
+
+.app-header {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* GRID */
+/* Based on flexboxes */
+
+.calendar-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  margin: 0;
+  padding: 0;
+  width: 100%
+}
+
+.calendar-col {
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 100%;
+}
+
+// To scale columns approptieately when body compressed
+.calendar-body .calendar-col {
+  flex-grow: 0;
+  flex-basis: calc(100%/7);
+  width: calc(100%/7);
+}
+
+.calendar-col-left {
+  justify-content: flex-start;
+  text-align: left;
+}
+.calendar-col-center {
+  justify-content: center;
+  text-align: center;
+}
+.calendar-col-right {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+/* calendar */
+
+.calendar-container {
+  display: block;
+  max-width: var(--widget-width);
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+.calendar {
+  display: block;
+  position: relative;
+  width: 100%;
+  background: var(--neutral-color);
+  border: 1px solid var(--border-color);
+}
+
+.calendar-header {
+  height: var(--header-height);
+  width: 100%;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--header-color);
+  color: var(--neutral-color);
+}
+
+.calendar-days {
+  font-weight: 400;
+  color: var(--text-color);
+  font-size: 90%;
+  padding: .75em 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.calendar-body {}
+
+/* Uncomment if greed required
+
+.calendar-body .calendar-row {
+  border-bottom: 1px solid var(--border-color);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+*/
+
+.calendar-cell {
+  position: relative;
+  height: var(--cell-height);
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--neutral-color);
+  transition: 0.25s ease-out;
+
+  display: flex;
+  &-inner {
+    align-self: center;
+  }
+
+  &:hover {
+    background: darken($bg-color, 5%);
+    transition: 0.5s ease-out;
+  }
+  /* Uncomment if greed required
+  // border-right: 1px solid var(--border-color);
+  // &:last-child {
+  //   border-right: none;
+  // }
+  */
+}
+
+.calendar-cell--selected, .calendar-cell--current {
+  background-color: var(--selected-date-bg-color);
+  border-radius: 3px;
+
+  &:hover {
+    background: lighten($selected-date-bg-color, 5%);
+    transition: 0.5s ease-out;
+  }
+}
+
+.calendar-cell--disabled {
+  color: var(--text-color-light);
+  pointer-events: none;
+}
+
+/* ICONS */
+
+.calendar-left-arrow {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+.calendar-header-date {
+  display: flex;
+  align-items: center;
+}
+.calendar-right-arrow {
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.calendar-icon {
+  font-family: 'Material Icons', serif;
+  font-style: normal;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  cursor: pointer;
+  transition: .15s ease-out;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+
+  &:hover {
+    transform: scale(1.75);
+    transition: .25s ease-out;
+    color: var(--neutral-color);
+  }
+}
