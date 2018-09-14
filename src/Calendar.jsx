@@ -12,7 +12,8 @@ class Calendar extends React.Component {
     selectedDate: new Date(),
 
     form: { hourText: '', minuteText: '', eventNameText: '' },
-    eventList: []
+    eventList: [],
+    visual: {}
   };
 
   renderHeader() {
@@ -39,7 +40,7 @@ class Calendar extends React.Component {
     const dateFormat = "dddd";
     const days = [];
 
-    let startDate = dateFns.startOfWeek(this.state.currentMonth);
+    const startDate = dateFns.startOfWeek(this.state.currentMonth);
 
     for (let i = 0; i < 7; i++) {
       days.push(
@@ -74,9 +75,9 @@ class Calendar extends React.Component {
 
     const buildWeekRow = (day, weekRow) => {
       for (let i = 0; i < 7; i++) {
-        let formattedDate = dateFns.format(day, dateFormat);
+        const formattedDate = dateFns.format(day, dateFormat);
 
-        let options = [];
+        const options = [];
         if (!dateFns.isSameMonth(day, monthStart)) { options.push('calendar-cell--disabled') }
         if (dateFns.isSameDay(day, selectedDate)) { options.push('calendar-cell--selected') }
         if (dateFns.isSameDay(day, currentDate)) { options.push('calendar-cell--current') }
@@ -102,13 +103,14 @@ class Calendar extends React.Component {
 
   renderCells() {
     const {currentMonth, selectedDate} = this.state;
-    let rows = this._buildCalendarRowsData(currentMonth, selectedDate);
+    const rows = this._buildCalendarRowsData(currentMonth, selectedDate);
 
-    let rowsMarkup = rows.map((row, i) => {
+    const rowsMarkup = rows.map((row, i) => {
       return (
         <div className="calendar-row" key={i}>
           {
             row.map( dayMeta => {
+              const open = !!(this.state.visual.isToolTipOpen && dateFns.isSameDay(dayMeta.day, this.state.visual.day));
               return (
                 <div className={`calendar-col calendar-col-center calendar-cell ${dayMeta.options.join(' ')}` }
                      key={dayMeta.day}
@@ -116,11 +118,16 @@ class Calendar extends React.Component {
                 >
                   <Tooltip
                     interactive
+                    arrow
+                    unmountHTMLWhenHide
                     position="bottom"
+                    theme="light"
                     trigger="click"
+                    open={open}
+                    onRequestClose={() => {this.setIsOpen(false, dayMeta.day)}}
                     html={this.renderForm()}
                   >
-                    <div className="calendar-cell-inner"><div>{dayMeta.formattedDate}</div></div>
+                    <div className="calendar-cell-inner" onClick={() => {this.setIsOpen(true, dayMeta.day) }}><div>{dayMeta.formattedDate}</div></div>
                   </Tooltip>
                 </div>
               )
@@ -173,25 +180,73 @@ class Calendar extends React.Component {
   };
 
   onInputChange = (e) => {
-    const target = e.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
+    const { type, checked, name, value: targetValue  } = e.target
+    const value = type === 'checkbox' ? checked : targetValue;
+
     const previousFormState = this.state.form
 
     this.setState({
-      form: {...previousFormState, [`${name}Text`]: value}
+      form: {
+        ...previousFormState,
+        [`${name}Text`]: value
+      }
     });
   };
 
   onFormSubmit = (e) => {
     e.preventDefault();
+    /* '>=' is nessasary to add several events with the same hour-minute pair for a given day */
+    /* with standard dateFns.isAfter, dateFns.isBefore would be mistake for this case */
+    const earlierThan = (eventItem, list) => list.filter(li => li.day < eventItem.day)
+    const laterThan = (eventItem, list) => list.filter(li => li.day >= eventItem.day)
 
-    let newEventItem = this.state.form
+    const {
+      eventList: oldEventList,
+      selectedDate,
+      currentMonth: selectedMonth,
+      form: {hourText, minuteText, eventNameText}
+    } = this.state;
+
+    const eventDate = new Date(
+      dateFns.getYear(selectedMonth),
+      dateFns.getMonth(selectedMonth),
+      dateFns.getDate(selectedDate),
+      parseInt(hourText, 10),
+      parseInt(minuteText, 10),
+    );
+
+    // if (eventDate == 'Invalid Date') { return null };
+
+    const newEventItem = {
+      day: eventDate,
+      eventName: eventNameText
+    }
+    const newEventList = [...earlierThan(newEventItem, oldEventList), newEventItem, ...laterThan(newEventItem, oldEventList)]
 
     this.setState({
       form: { hourText: '', minuteText: '', eventNameText: '' },
-      eventList: [ newEventItem, ...this.state.eventList ]
+      eventList: newEventList,
+      visual: { isToolTipOpen: false, day: eventDate }
     })
+  }
+
+  setIsOpen = (isOpen, day) => {
+    this.setState({visual: { isToolTipOpen: isOpen, day: day }})
+  }
+
+  renderEventsList() {
+    if (!this.state.eventList.length) { return null }
+
+    const dateFormatter = (date) => dateFns.format(date, 'D MMMM YYYY HH-mm')
+
+    const eventsListMarkup = this.state.eventList.map((eventItem, i) =>
+      <li className="calendar-event-list__item" key={i}> { dateFormatter(eventItem.day) }: - { eventItem.eventName } </li>)
+
+    return (
+      <ul className="calendar-event-list">
+        { eventsListMarkup }
+      </ul>
+    )
   }
 
   render() {
@@ -203,11 +258,7 @@ class Calendar extends React.Component {
           {this.renderCells()}
         </div>
 
-        <ul className="event-list">
-          {
-            <li> { this.state.eventList.length } </li>
-          }
-        </ul>
+        {this.renderEventsList()}
       </div>
     );
   }
