@@ -4,25 +4,23 @@
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
 :root {
-  --main-color: #1a8fff;
-  --text-color: #777;
-  --text-color-light: #ccc;
-  --border-color: #eee;
-  --bg-color: #f9f9f9;
-  --neutral-color: #fff;
-  --header-color: #00ab6b;
-  --selected-date-bg-color: #00ab6b;
-  --current-date-bg-color: #00ab6b;
-  --save-btn-color: #999;
-
-  --widget-width: 720px;
-  --header-height: 150px;
-  --cell-height: 50px;
 }
 /* It can be handy to use native variables to provide widget user a way to configure how calendar should look */
 /* But SASS functions can't modify native variables (lighten, darken etc), because preprocessors process CSS before native variables calculated */
-$selected-date-bg-color: #00ab6b;
+
+$text-color: #777;
+$text-color-light: #ccc;
+$border-color: #eee;
 $bg-color: #f9f9f9;
+$neutral-color: #fff;
+$header-bg-color: linear-gradient(315deg, #43d6a9, #79dfdf);
+$days-bg-color: #fff;
+$body-bg-color: lighten($days-bg-color, 10%);
+$selected-date-bg-color: #43d6a9;
+$save-btn-color: #43d6a9;
+$widget-width: 720px;
+$header-height: 150px;
+$cell-height: 50px;
 
 
 /* Reset box-sizing for each element */
@@ -31,14 +29,20 @@ $bg-color: #f9f9f9;
   box-sizing: border-box;
 }
 
-/* helpers */
-.borders {
-  border: 1px solid var(--border-color);
-}
-
 .app-header {
   margin: 0 auto;
   text-align: center;
+}
+
+/* helpers */
+.borders {
+  border: 1px solid $border-color;
+}
+
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 /* GRID */
@@ -84,7 +88,7 @@ $bg-color: #f9f9f9;
 
 .calendar-container {
   display: block;
-  max-width: var(--widget-width);
+  max-width: $widget-width;
   margin: 0 auto;
   margin-top: 60px;
 }
@@ -93,35 +97,39 @@ $bg-color: #f9f9f9;
   display: block;
   position: relative;
   width: 100%;
-  background: var(--neutral-color);
-  border: 1px solid var(--border-color);
+  background: $neutral-color;
+  border-radius: 6px;
+  border: 1px solid $border-color;
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,0.08);
 }
 
 .calendar-header {
-  height: var(--header-height);
+  height: $header-height;
   width: 100%;
   font-size: 24px;
   font-weight: 700;
   padding: 10px 0;
-  border-bottom: 1px solid var(--border-color);
-  background: var(--header-color);
-  color: var(--neutral-color);
+  border-radius: 6px 6px 0 0;
+  border-bottom: 1px solid $border-color;
+  background: $header-bg-color;
+  color: $neutral-color;
 }
 
 .calendar-days {
   font-weight: 400;
-  color: var(--text-color);
+  background: $days-bg-color;
+  color: $text-color;
   font-size: 90%;
   padding: .75em 0;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid $border-color;
 }
 
-.calendar-body {}
+.calendar-body { }
 
 /* Uncomment if greed required
 
 .calendar-body .calendar-row {
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid $border-color;
 
   &:last-child {
     border-bottom: none;
@@ -131,11 +139,12 @@ $bg-color: #f9f9f9;
 
 .calendar-cell {
   position: relative;
-  height: var(--cell-height);
+  height: $cell-height;
   overflow: hidden;
   cursor: pointer;
-  background: var(--neutral-color);
+  background: $neutral-color;
   transition: 0.25s ease-out;
+  border-radius: 3px;
 
   display: flex;
 
@@ -147,33 +156,31 @@ $bg-color: #f9f9f9;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: var(--cell-height);
+    height: $cell-height;
   }
 
   &:hover {
     background: darken($bg-color, 5%);
     transition: 0.5s ease-out;
   }
-  /* Uncomment if greed required
-  // border-right: 1px solid var(--border-color);
+  // Uncomment if greed required
+  // border-right: 1px solid $border-color;
   // &:last-child {
   //   border-right: none;
   // }
-  */
 }
 
 .calendar-cell--selected, .calendar-cell--current {
-  background-color: var(--selected-date-bg-color);
-  border-radius: 3px;
+  background-color: $selected-date-bg-color;
 
   &:hover {
-    background: lighten($selected-date-bg-color, 5%);
+    background: lighten($selected-date-bg-color, 10%);
     transition: 0.5s ease-out;
   }
 }
 
 .calendar-cell--disabled {
-  color: var(--text-color-light);
+  color: $text-color-light;
   pointer-events: none;
 }
 
@@ -202,12 +209,23 @@ $bg-color: #f9f9f9;
 }
 
 .event-form__save-btn {
-  background: var(--save-btn-color);
+  background: $save-btn-color;
   min-width: 70px;
   flex-grow: 0;
   padding: 10px;
   margin: 8px;
   border-radius: 3px;
+
+  &:hover {
+    background-color: lighten($save-btn-color, 10%)
+  }
+}
+
+.calendar-event-list {
+  @include list-reset;
+
+  margin-top: 20px;
+  margin-left: 44px;
 }
 
 /* ICONS */
@@ -249,6 +267,6 @@ $bg-color: #f9f9f9;
   &:hover {
     transform: scale(1.75);
     transition: .25s ease-out;
-    color: var(--neutral-color);
+    color: $neutral-color;
   }
 }
