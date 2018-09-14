@@ -1,5 +1,7 @@
 import React from "react";
 import dateFns from "date-fns";
+import 'react-tippy/dist/tippy.css'
+import { Tooltip } from 'react-tippy';
 
 // Should be configured in the config file
 const HEADER_DATE_FORMAT = "MMMM YYYY";
@@ -109,7 +111,14 @@ class Calendar extends React.Component {
                      key={dayMeta.day}
                      onClick={this.onDateClick(dayMeta.day)}
                 >
-                  <div className="calendar-cell-inner">{dayMeta.formattedDate}</div>
+                  <Tooltip
+                    interactive
+                    position="bottom"
+                    trigger="click"
+                    html={this.renderForm()}
+                  >
+                    <div className="calendar-cell-inner"><div>{dayMeta.formattedDate}</div></div>
+                  </Tooltip>
                 </div>
               )
             })
@@ -119,6 +128,27 @@ class Calendar extends React.Component {
     })
 
     return <div className="calendar-body">{rowsMarkup}</div>;
+  }
+
+  renderForm() {
+    return (
+      <form className="event-form">
+        <div className="event-form__row">
+          <input className="event-form__row-item" type="text" name="hour" placeholder="Hour"/>
+          <input className="event-form__row-item" type="text" name="minute" placeholder="Minute" />
+        </div>
+
+        <div className="event-form__row">
+          <input className="event-form__row-item" type="text" name="event_name" placeholder="Event Name"/>
+        </div>
+
+        <div className="event-form__row">
+          <div className="event-form__save-btn-wrapper">
+            <button type="submit" className="event-form__row-item event-form__save-btn">Save</button>
+          </div>
+        </div>
+      </form>
+    )
   }
 
   onDateClick = day => () => {
