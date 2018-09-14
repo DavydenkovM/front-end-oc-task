@@ -14,8 +14,8 @@ $border-color: #eee;
 $bg-color: #f9f9f9;
 $neutral-color: #fff;
 $header-bg-color: linear-gradient(315deg, #43d6a9, #79dfdf);
-$days-bg-color: #fff;
-$body-bg-color: lighten($days-bg-color, 10%);
+$days-bg-color: #e6e9ed;
+$body-bg-color: #f5f7fa;
 $selected-date-bg-color: #43d6a9;
 $save-btn-color: #43d6a9;
 $widget-width: 720px;
@@ -124,7 +124,9 @@ $cell-height: 50px;
   border-bottom: 1px solid $border-color;
 }
 
-.calendar-body { }
+.calendar-body {
+  background: $body-bg-color;
+}
 
 /* Uncomment if greed required
 
@@ -142,7 +144,7 @@ $cell-height: 50px;
   height: $cell-height;
   overflow: hidden;
   cursor: pointer;
-  background: $neutral-color;
+  background: $body-bg-color;
   transition: 0.25s ease-out;
   border-radius: 3px;
 
