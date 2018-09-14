@@ -9,7 +9,10 @@ const HEADER_DATE_FORMAT = "MMMM YYYY";
 class Calendar extends React.Component {
   state = {
     currentMonth: new Date(),
-    selectedDate: new Date()
+    selectedDate: new Date(),
+
+    form: { hourText: '', minuteText: '', eventNameText: '' },
+    eventList: []
   };
 
   renderHeader() {
@@ -132,14 +135,14 @@ class Calendar extends React.Component {
 
   renderForm() {
     return (
-      <form className="event-form">
+      <form className="event-form" onSubmit={this.onFormSubmit}>
         <div className="event-form__row">
-          <input className="event-form__row-item" type="text" name="hour" placeholder="Hour"/>
-          <input className="event-form__row-item" type="text" name="minute" placeholder="Minute" />
+          <input className="event-form__row-item" type="text" name="hour" placeholder="Hour" onChange={this.onInputChange} value={this.state.form.hourText}/>
+          <input className="event-form__row-item" type="text" name="minute" placeholder="Minute" onChange={this.onInputChange} value={this.state.form.minuteText}/>
         </div>
 
         <div className="event-form__row">
-          <input className="event-form__row-item" type="text" name="event_name" placeholder="Event Name"/>
+          <input className="event-form__row-item" type="text" name="eventName" placeholder="Event Name" value={this.state.form.eventNameText} onChange={this.onInputChange}/>
         </div>
 
         <div className="event-form__row">
@@ -169,6 +172,28 @@ class Calendar extends React.Component {
     });
   };
 
+  onInputChange = (e) => {
+    const target = e.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+    const previousFormState = this.state.form
+
+    this.setState({
+      form: {...previousFormState, [`${name}Text`]: value}
+    });
+  };
+
+  onFormSubmit = (e) => {
+    e.preventDefault();
+
+    let newEventItem = this.state.form
+
+    this.setState({
+      form: { hourText: '', minuteText: '', eventNameText: '' },
+      eventList: [ newEventItem, ...this.state.eventList ]
+    })
+  }
+
   render() {
     return (
       <div className="calendar-container">
@@ -177,6 +202,12 @@ class Calendar extends React.Component {
           {this.renderDays()}
           {this.renderCells()}
         </div>
+
+        <ul className="event-list">
+          {
+            <li> { this.state.eventList.length } </li>
+          }
+        </ul>
       </div>
     );
   }
