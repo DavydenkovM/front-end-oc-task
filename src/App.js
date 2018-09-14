@@ -9,12 +9,6 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="app-header">
-          <div id="logo">
-            <span className="calendar-icon">date_range</span>
-            <span>
-              <b>Event calendar</b>
-            </span>
-          </div>
         </header>
         <main>
           <Calendar />
