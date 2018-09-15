@@ -3,13 +3,9 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
-:root {
-}
-/* It can be handy to use native variables to provide widget user a way to configure how calendar should look */
-/* But SASS functions can't modify native variables (lighten, darken etc), because preprocessors process CSS before native variables calculated */
-
 $text-color: #777;
 $text-color-light: #ccc;
+$btn-text-color: #eee;
 $border-color: #eee;
 $bg-color: #f9f9f9;
 $neutral-color: #fff;
@@ -21,7 +17,6 @@ $save-btn-color: #43d6a9;
 $widget-width: 720px;
 $header-height: 150px;
 $cell-height: 50px;
-
 
 /* Reset box-sizing for each element */
 /* TODO: Refactor in production code using mixins */
@@ -145,6 +140,7 @@ $cell-height: 50px;
   overflow: hidden;
   cursor: pointer;
   background: $body-bg-color;
+  color: $text-color;
   transition: 0.25s ease-out;
   border-radius: 3px;
 
@@ -211,7 +207,9 @@ $cell-height: 50px;
 }
 
 .event-form__save-btn {
+  color: $btn-text-color;
   background: $save-btn-color;
+  border-color: $save-btn-color;
   min-width: 70px;
   flex-grow: 0;
   padding: 10px;
