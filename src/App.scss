@@ -25,6 +25,12 @@ $cell-height: 50px;
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+}
+
 .app-header {
   margin: 0 auto;
   text-align: center;
