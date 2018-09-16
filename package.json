@@ -8,6 +8,7 @@
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-scripts": "1.1.5",
+    "react-simple-storage": "^1.2.2",
     "react-tippy": "^1.2.2"
   },
   "scripts": {
