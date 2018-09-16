@@ -74,12 +74,13 @@ const Form = ({onFormSubmit, onInputChange, formState}) => {
   )
 }
 
-const Body = ({ currentMonth, selectedDate, setTooltipState, isTooltipOpen, onDayClick, children }) => {
+const Body = ({ currentMonth, selectedDate, setTooltipState, isTooltipOpen, onDayClick, enableGrid, children }) => {
   const rows = getCalendarRowsData(currentMonth, selectedDate);
+  const cellClassModifier = enableGrid ? 'calendar-cell--with-grid' : ''
 
   const renderCell = (dayMeta) => {
     return (
-      <div className={`calendar-col calendar-col-center calendar-cell ${dayMeta.options.join(' ')}` }
+      <div className={`calendar-col calendar-col-center calendar-cell ${cellClassModifier} ${dayMeta.options.join(' ')}` }
         key={dayMeta.day}
         onClick={onDayClick(dayMeta.day)}
       >
@@ -103,8 +104,10 @@ const Body = ({ currentMonth, selectedDate, setTooltipState, isTooltipOpen, onDa
   }
 
   const rowsMarkup = rows.map((row, i) => {
+  const rowClassModifier = enableGrid ? 'calendar-row--with-grid' : ''
+
   return (
-    <div className="calendar-row" key={i}>
+    <div className={`calendar-row ${rowClassModifier}`} key={i}>
       { row.map(dayMeta => renderCell(dayMeta, isTooltipOpen)) }
     </div>
     )
@@ -135,7 +138,7 @@ class Calendar extends React.Component {
 
     form: { hourText: '', minuteText: '', eventNameText: '', isFormInputValid: false },
     eventsList: [],
-    visual: {},
+    visual: { isTooltipOpen: false, day: null, enableGrid: false }
   };
 
   constructor(props) {
@@ -222,22 +225,31 @@ class Calendar extends React.Component {
       eventName: eventNameText
     }
     const newEventsList = [...earlierThan(newEventItem, oldEventsList), newEventItem, ...laterThan(newEventItem, oldEventsList)]
+    const previousVisualState = this.state.visual;
 
     this.setState({
       form: { hourText: '', minuteText: '', eventNameText: '' },
       eventsList: newEventsList,
-      visual: { isTooltipOpen: false, day: eventDate }
+      visual: { ...previousVisualState, isTooltipOpen: false, day: eventDate }
     })
   }
 
   setTooltipState = (isOpen, day) => () => {
-    this.setState({visual: { isTooltipOpen: isOpen, day: day }})
+    const previousVisualState = this.state.visual;
+    this.setState({visual: { ...previousVisualState, isTooltipOpen: isOpen, day: day }})
   }
 
   flushState = (e) => {
     e.preventDefault();
 
     this.setState(Calendar.initialState);
+  }
+
+  toggleGrid = (e) => {
+    e.preventDefault();
+
+    const previousVisualState = this.state.visual;
+    this.setState({visual: { ...previousVisualState, enableGrid: !previousVisualState.enableGrid }});
   }
 
   render() {
@@ -256,6 +268,7 @@ class Calendar extends React.Component {
             currentMonth={this.state.currentMonth}
             selectedDate={this.state.selectedDate}
             onDayClick={ this.onDayClick }
+            enableGrid={ this.state.visual.enableGrid }
             isTooltipOpen={ (dayMeta) => !!(this.state.visual.isTooltipOpen && dateFns.isSameDay(dayMeta.day, this.state.visual.day)) }
             setTooltipState={ this.setTooltipState }
           >
@@ -271,7 +284,10 @@ class Calendar extends React.Component {
           <Calendar.EventsList
             eventsListState={this.state.eventsList}
           />
-          <a className="calendar-col calendar-col-right flush-state-link" onClick={this.flushState}>Flush State</a>
+          <ul className="calendar-controls calendar-col calendar-col-right">
+            <li className="flush-state-link" onClick={this.flushState}>Flush State</li>
+            <li className="toggle-grid-link" onClick={this.toggleGrid}>Toggle Grid</li>
+          </ul>
         </div>
       </div>
     );
