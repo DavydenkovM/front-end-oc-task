@@ -49,6 +49,8 @@ const DaysOfTheWeek = (props) => {
 }
 
 const Form = ({onFormSubmit, onInputChange, formState}) => {
+  const formDisabledClass = !formState.isFormInputValid ? 'event-form__save-btn--disabled' : ''
+
   return (
     <form className="event-form" onSubmit={onFormSubmit}>
       <div className="event-form__row">
@@ -65,7 +67,7 @@ const Form = ({onFormSubmit, onInputChange, formState}) => {
 
       <div className="event-form__row">
         <div className="event-form__save-btn-wrapper">
-          <button type="submit" className="event-form__row-item event-form__save-btn">Save</button>
+          <button type="submit" className={`event-form__row-item event-form__save-btn ${formDisabledClass}`} disabled={!formState.isFormInputValid}>Save</button>
         </div>
       </div>
     </form>
@@ -131,9 +133,9 @@ class Calendar extends React.Component {
     currentMonth: new Date(),
     selectedDate: new Date(),
 
-    form: { hourText: '', minuteText: '', eventNameText: '' },
+    form: { hourText: '', minuteText: '', eventNameText: '', isFormInputValid: false },
     eventsList: [],
-    visual: {}
+    visual: {},
   };
 
   constructor(props) {
@@ -171,10 +173,22 @@ class Calendar extends React.Component {
 
     const previousFormState = this.state.form
 
+    if ((name === 'minute' && !value.match(/^[0-5]?[0-9]?$/)) ||
+      ((name === 'hour' && !value.match(/^([01]?[0-9]?|2?[0-3]?)$/)))) {
+      return this.setState({
+        form: {
+          ...previousFormState,
+        }
+      })
+    }
+
+    const newFormState = {...previousFormState, [`${name}Text`]: value};
+    const isFormInputValid = (newFormState.hourText && newFormState.minuteText && newFormState.eventNameText) ? true : false;
+
     this.setState({
       form: {
-        ...previousFormState,
-        [`${name}Text`]: value
+        ...newFormState,
+        isFormInputValid: isFormInputValid
       }
     });
   };

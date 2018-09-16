@@ -14,6 +14,7 @@ $days-bg-color: #e6e9ed;
 $body-bg-color: #f5f7fa;
 $selected-date-bg-color: #43d6a9;
 $save-btn-color: #43d6a9;
+$disabled-btn-color: #f5f7fa;
 $widget-width: 720px;
 $header-height: 150px;
 $cell-height: 50px;
@@ -215,9 +216,21 @@ $cell-height: 50px;
   padding: 10px;
   margin: 8px;
   border-radius: 3px;
+  transition: .25s ease-out;
 
   &:hover {
     background-color: lighten($save-btn-color, 10%)
+  }
+
+  &--disabled {
+    color: $text-color;
+    background-color: $disabled-btn-color;
+    border-color: $disabled-btn-color;
+    transition: .25s ease-out;
+
+    &:hover {
+      background-color: $disabled-btn-color;
+    }
   }
 }
 
