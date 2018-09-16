@@ -200,8 +200,10 @@ class Calendar extends React.Component {
     e.preventDefault();
     /* '>=' is nessasary to add several events with the same hour-minute pair for a given day */
     /* with standard dateFns.isAfter, dateFns.isBefore would be mistake for this case */
-    const earlierThan = (eventItem, list) => list.filter(li => li.day < eventItem.day)
-    const laterThan = (eventItem, list) => list.filter(li => li.day >= eventItem.day)
+    /* Also we should ensure that after deserialization Date string was converted into correct instance of a Date (see simple-storage) */
+    /* https://github.com/ryanjyost/react-simple-storage/blob/master/src/index.js#L83 */
+    const earlierThan = (eventItem, list) => list.filter(li => dateFns.parse(li.day) < eventItem.day)
+    const laterThan = (eventItem, list) => list.filter(li => dateFns.parse(li.day) >= eventItem.day)
 
     const {
       eventsList: oldEventsList,
@@ -218,13 +220,12 @@ class Calendar extends React.Component {
       parseInt(minuteText, 10),
     );
 
-    // if (eventDate == 'Invalid Date') { return null };
-
     const newEventItem = {
       day: eventDate,
       eventName: eventNameText
     }
     const newEventsList = [...earlierThan(newEventItem, oldEventsList), newEventItem, ...laterThan(newEventItem, oldEventsList)]
+
     const previousVisualState = this.state.visual;
 
     this.setState({
