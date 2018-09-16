@@ -279,6 +279,14 @@ body {
 
   margin-top: 20px;
   margin-left: 44px;
+
+  li {
+    border-bottom: 1px solid $border-color
+  }
+
+  li:nth-child(even) {
+    background-color: $body-bg-color;
+  }
 }
 
 /* ICONS */
