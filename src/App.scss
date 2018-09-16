@@ -221,6 +221,18 @@ $cell-height: 50px;
   }
 }
 
+.flush-state-link {
+  margin-top: 20px;
+  margin-right: 44px;
+  min-width: 100px;
+  color: blue;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .calendar-event-list {
   @include list-reset;
 

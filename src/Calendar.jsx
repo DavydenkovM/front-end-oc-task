@@ -1,10 +1,12 @@
 import React from "react";
 import dateFns from "date-fns";
-
-import 'react-tippy/dist/tippy.css'
+import SimpleStorage from "react-simple-storage";
 import { Tooltip } from 'react-tippy';
 
+import 'react-tippy/dist/tippy.css'
+
 import getCalendarRowsData from './lib/getCalendarRowsData.js'
+
 
 const Header = (props) => {
   const HEADER_DATE_FORMAT = "MMMM YYYY";
@@ -118,14 +120,14 @@ const EventsList = ({eventsListState}) => {
     <li className="calendar-event-list__item" key={i}> { dateFormatter(eventItem.day) }: - { eventItem.eventName } </li>)
 
   return (
-    <ul className="calendar-event-list">
+    <ul className="calendar-col calendar-event-list">
       { eventsListMarkup }
     </ul>
   )
 }
 
 class Calendar extends React.Component {
-  state = {
+  static initialState = {
     currentMonth: new Date(),
     selectedDate: new Date(),
 
@@ -133,6 +135,11 @@ class Calendar extends React.Component {
     eventsList: [],
     visual: {}
   };
+
+  constructor(props) {
+    super(props)
+    this.state = Calendar.initialState;
+  }
 
   static Header = Header;
   static DaysOfTheWeek = DaysOfTheWeek;
@@ -213,9 +220,17 @@ class Calendar extends React.Component {
     this.setState({visual: { isTooltipOpen: isOpen, day: day }})
   }
 
+  flushState = (e) => {
+    e.preventDefault();
+
+    this.setState(Calendar.initialState);
+  }
+
   render() {
     return (
       <div className="calendar-container">
+        <SimpleStorage parent={this} />
+
         <div className="calendar">
           <Calendar.Header
             currentMonth={this.state.currentMonth}
@@ -238,9 +253,12 @@ class Calendar extends React.Component {
           </Calendar.Body>
         </div>
 
-        <Calendar.EventsList
-          eventsListState={this.state.eventsList}
-        />
+        <div className="calendar-row">
+          <Calendar.EventsList
+            eventsListState={this.state.eventsList}
+          />
+          <a className="calendar-col calendar-col-right flush-state-link" onClick={this.flushState}>Flush State</a>
+        </div>
       </div>
     );
   }
