@@ -50,6 +50,20 @@ body {
 /* GRID */
 /* Based on flexboxes */
 
+.calendar-body .calendar-row {
+  border-bottom: 1px solid $body-bg-color;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.calendar-body .calendar-row--with-grid {
+  border-bottom: 1px solid $border-color;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
 .calendar-row {
   display: flex;
   flex-direction: row;
@@ -57,7 +71,7 @@ body {
 
   margin: 0;
   padding: 0;
-  width: 100%
+  width: 100%;
 }
 
 .calendar-col {
@@ -130,23 +144,17 @@ body {
   background: $body-bg-color;
 }
 
-/* Uncomment if greed required
-
-.calendar-body .calendar-row {
-  border-bottom: 1px solid $border-color;
-
-  &:last-child {
-    border-bottom: none;
-  }
-}
-*/
-
 .calendar-cell {
   position: relative;
   height: $cell-height;
   overflow: hidden;
   cursor: pointer;
   background: $body-bg-color;
+  border-right: 1px solid $body-bg-color;
+  &:last-child {
+    border-right: none;
+  }
+
   color: $text-color;
   transition: 0.25s ease-out;
   border-radius: 3px;
@@ -174,6 +182,14 @@ body {
   //   border-right: none;
   // }
 }
+
+.calendar-cell--with-grid {
+  border-right: 1px solid $border-color;
+  &:last-child {
+    border-right: none;
+  }
+}
+
 
 .calendar-cell--selected, .calendar-cell--current {
   background-color: $selected-date-bg-color;
@@ -240,7 +256,12 @@ body {
   }
 }
 
-.flush-state-link {
+.calendar-controls {
+  @include list-reset;
+  flex-grow: 1;
+}
+
+.flush-state-link, .toggle-grid-link {
   margin-top: 20px;
   margin-right: 44px;
   min-width: 100px;
@@ -254,6 +275,7 @@ body {
 
 .calendar-event-list {
   @include list-reset;
+  flex-grow: 2;
 
   margin-top: 20px;
   margin-left: 44px;
