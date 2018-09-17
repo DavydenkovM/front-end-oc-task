@@ -1,5 +1,6 @@
 import React from "react";
 import dateFns from "date-fns";
+import cn from "classnames";
 import SimpleStorage from "react-simple-storage";
 import { Tooltip } from 'react-tippy';
 
@@ -15,8 +16,8 @@ const Header = (props) => {
 
   return (
     <div className="calendar-header calendar-row">
-      <div className="calendar-left-arrow calendar-col calendar-col-left">
-        <div className="calendar-icon" onClick={props.prevMonth}>
+      <div className="calendar-left-arrow calendar-col calendar-col-left" onClick={props.prevMonth}>
+        <div className="calendar-icon">
           chevron_left
         </div>
       </div>
@@ -30,7 +31,7 @@ const Header = (props) => {
   );
 }
 
-const DaysOfTheWeek = (props) => {
+const Week = (props) => {
   const dateFormat = "dddd";
   const days = [];
 
@@ -40,47 +41,65 @@ const DaysOfTheWeek = (props) => {
   for (let i = 0; i < 7; i++) {
     days.push(
       <div className="calendar-col calendar-col-center" key={i}>
-        {dateFns.format(dateFns.addDays(startDate, i), dateFormat).substring(0,2) }
+        {dateFns.format(dateFns.addDays(startDate, i), dateFormat).substring(0, 2)}
       </div>
-      );
+    );
   }
 
   return <div className="calendar-days calendar-row">{days}</div>;
 }
 
 const Form = ({onFormSubmit, onInputChange, formState}) => {
-  const formDisabledClass = !formState.isFormInputValid ? 'event-form__save-btn--disabled' : ''
-
   return (
     <form className="event-form" onSubmit={onFormSubmit}>
       <div className="event-form__row">
-        <input className="event-form__row-item" type="text" name="hour" placeholder="Hour"
-          onChange={onInputChange} value={formState.hourText}/>
-        <input className="event-form__row-item" type="text" name="minute" placeholder="Minute"
-          onChange={onInputChange} value={formState.minuteText}/>
+        <input
+          className="event-form__row-item"
+          type="text" name="hour"
+          placeholder="Hour"
+          onChange={onInputChange}
+          value={formState.hourText}
+        />
+        <input
+          className="event-form__row-item"
+          type="text" name="minute"
+          placeholder="Minute"
+          onChange={onInputChange}
+          value={formState.minuteText}/>
       </div>
 
       <div className="event-form__row">
-        <input className="event-form__row-item" type="text" name="eventName" placeholder="Event Name"
-          onChange={onInputChange} value={formState.eventNameText}/>
+        <input
+          className="event-form__row-item"
+          type="text" name="eventName"
+          placeholder="Event Name"
+          onChange={onInputChange}
+          value={formState.eventNameText}
+        />
       </div>
 
       <div className="event-form__row">
         <div className="event-form__save-btn-wrapper">
-          <button type="submit" className={`event-form__row-item event-form__save-btn ${formDisabledClass}`} disabled={!formState.isFormInputValid}>Save</button>
+          <button
+            type="submit"
+            className={cn("event-form__row-item", "event-form__save-btn", `${!formState.isFormInputValid && 'event-form__save-btn--disabled'}`)}
+            disabled={!formState.isFormInputValid}
+          >
+            Save
+          </button>
         </div>
       </div>
     </form>
   )
 }
 
-const Body = ({ currentMonth, selectedDate, setTooltipState, isTooltipOpen, onDayClick, enableGrid, children }) => {
+const Body = ({currentMonth, selectedDate, setTooltipState, isTooltipOpen, onDayClick, enableGrid, children}) => {
   const rows = getCalendarRowsData(currentMonth, selectedDate);
-  const cellClassModifier = enableGrid ? 'calendar-cell--with-grid' : ''
 
   const renderCell = (dayMeta) => {
     return (
-      <div className={`calendar-col calendar-col-center calendar-cell ${cellClassModifier} ${dayMeta.options.join(' ')}` }
+      <div
+        className={cn("calendar-col", "calendar-col-center", "calendar-cell", `${enableGrid && 'calendar-cell--with-grid'}`, ...dayMeta.options)}
         key={dayMeta.day}
         onClick={onDayClick(dayMeta.day)}
       >
@@ -95,7 +114,10 @@ const Body = ({ currentMonth, selectedDate, setTooltipState, isTooltipOpen, onDa
           onRequestClose={setTooltipState(false, dayMeta.day)}
           html={children}
         >
-          <div className="calendar-cell-inner" onClick={setTooltipState(true, dayMeta.day)}>
+          <div
+            className="calendar-cell-inner"
+            onClick={setTooltipState(true, dayMeta.day)}
+          >
             <div>{dayMeta.formattedDate}</div>
           </div>
         </Tooltip>
@@ -104,12 +126,10 @@ const Body = ({ currentMonth, selectedDate, setTooltipState, isTooltipOpen, onDa
   }
 
   const rowsMarkup = rows.map((row, i) => {
-  const rowClassModifier = enableGrid ? 'calendar-row--with-grid' : ''
-
-  return (
-    <div className={`calendar-row ${rowClassModifier}`} key={i}>
-      { row.map(dayMeta => renderCell(dayMeta, isTooltipOpen)) }
-    </div>
+    return (
+      <div className={cn("calendar-row", `${enableGrid && 'calendar-row--with-grid'}`)} key={i}>
+        { row.map(dayMeta => renderCell(dayMeta, isTooltipOpen)) }
+      </div>
     )
   })
 
@@ -147,7 +167,7 @@ class Calendar extends React.Component {
   }
 
   static Header = Header;
-  static DaysOfTheWeek = DaysOfTheWeek;
+  static Week = Week;
   static Body = Body;
   static Form = Form;
   static EventsList = EventsList;
@@ -176,13 +196,17 @@ class Calendar extends React.Component {
 
     const previousFormState = this.state.form
 
-    if ((name === 'minute' && !value.match(/^[0-5]?[0-9]?$/)) ||
-      ((name === 'hour' && !value.match(/^([01]?[0-9]?|2?[0-3]?)$/)))) {
-      return this.setState({
+    if (
+      (name === 'minute' && !value.match(/^[0-5]?[0-9]?$/)) ||
+      (name === 'hour' && !value.match(/^([01]?[0-9]?|2?[0-3]?)$/))
+    ) {
+      this.setState({
         form: {
           ...previousFormState,
         }
       })
+
+      return;
     }
 
     const newFormState = {...previousFormState, [`${name}Text`]: value};
@@ -254,36 +278,46 @@ class Calendar extends React.Component {
   }
 
   render() {
+    const { 
+      currentMonth, 
+      prevMonth, 
+      nextMonth, 
+      selectedDate, 
+      visual: visualState,
+      form: formState,
+      eventsList
+    } = this.state;
+
     return (
       <div className="calendar-container">
         <SimpleStorage parent={this} />
 
         <div className="calendar">
           <Calendar.Header
-            currentMonth={this.state.currentMonth}
-            prevMonth={this.prevMonth}
-            nextMonth={this.nextMonth}
+            currentMonth={currentMonth}
+            prevMonth={prevMonth}
+            nextMonth={nextMonth}
           />
-          <Calendar.DaysOfTheWeek />
+          <Calendar.Week />
           <Calendar.Body
-            currentMonth={this.state.currentMonth}
-            selectedDate={this.state.selectedDate}
-            onDayClick={ this.onDayClick }
-            enableGrid={ this.state.visual.enableGrid }
-            isTooltipOpen={ (dayMeta) => !!(this.state.visual.isTooltipOpen && dateFns.isSameDay(dayMeta.day, this.state.visual.day)) }
-            setTooltipState={ this.setTooltipState }
+            currentMonth={currentMonth}
+            selectedDate={selectedDate}
+            onDayClick={this.onDayClick}
+            enableGrid={visualState.enableGrid}
+            isTooltipOpen={(dayMeta) => !!(visualState.isTooltipOpen && dateFns.isSameDay(dayMeta.day, visualState.day))}
+            setTooltipState={this.setTooltipState}
           >
             <Calendar.Form
               onFormSubmit={this.onFormSubmit}
               onInputChange={this.onInputChange}
-              formState={this.state.form}
+              formState={formState}
             />
           </Calendar.Body>
         </div>
 
         <div className="calendar-row">
           <Calendar.EventsList
-            eventsListState={this.state.eventsList}
+            eventsListState={eventsList}
           />
           <ul className="calendar-controls calendar-col calendar-col-right">
             <li className="flush-state-link" onClick={this.flushState}>Flush State</li>
