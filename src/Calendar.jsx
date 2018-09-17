@@ -278,11 +278,9 @@ class Calendar extends React.Component {
   }
 
   render() {
-    const { 
-      currentMonth, 
-      prevMonth, 
-      nextMonth, 
-      selectedDate, 
+    const {
+      currentMonth,
+      selectedDate,
       visual: visualState,
       form: formState,
       eventsList
@@ -295,8 +293,8 @@ class Calendar extends React.Component {
         <div className="calendar">
           <Calendar.Header
             currentMonth={currentMonth}
-            prevMonth={prevMonth}
-            nextMonth={nextMonth}
+            prevMonth={this.prevMonth}
+            nextMonth={this.nextMonth}
           />
           <Calendar.Week />
           <Calendar.Body
