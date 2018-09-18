@@ -49,48 +49,59 @@ const Week = (props) => {
   return <div className="calendar-days calendar-row">{days}</div>;
 }
 
-const Form = ({onFormSubmit, onInputChange, formState}) => {
-  return (
-    <form className="event-form" onSubmit={onFormSubmit}>
-      <div className="event-form__row">
-        <input
-          className="event-form__row-item"
-          type="text" name="hour"
-          placeholder="Hour"
-          onChange={onInputChange}
-          value={formState.hourText}
-        />
-        <input
-          className="event-form__row-item"
-          type="text" name="minute"
-          placeholder="Minute"
-          onChange={onInputChange}
-          value={formState.minuteText}/>
-      </div>
+class Form extends React.Component {
+  componentDidMount() {
+    // because react-tippy treat passed html as prop
+    // and marked input not actually in DOM
+    setTimeout(() => this.hourInput.focus(), 0)
+  }
 
-      <div className="event-form__row">
-        <input
-          className="event-form__row-item"
-          type="text" name="eventName"
-          placeholder="Event Name"
-          onChange={onInputChange}
-          value={formState.eventNameText}
-        />
-      </div>
+  render() {
+    const {onFormSubmit, onInputChange, formState} = this.props;
 
-      <div className="event-form__row">
-        <div className="event-form__save-btn-wrapper">
-          <button
-            type="submit"
-            className={cn("event-form__row-item", "event-form__save-btn", `${!formState.isFormInputValid && 'event-form__save-btn--disabled'}`)}
-            disabled={!formState.isFormInputValid}
-          >
-            Save
-          </button>
+    return (
+      <form className="event-form" onSubmit={onFormSubmit}>
+        <div className="event-form__row">
+          <input
+            className="event-form__row-item"
+            type="text" name="hour"
+            placeholder="Hour"
+            onChange={onInputChange}
+            value={formState.hourText}
+            ref={(input) => {this.hourInput = input}}
+          />
+          <input
+            className="event-form__row-item"
+            type="text" name="minute"
+            placeholder="Minute"
+            onChange={onInputChange}
+            value={formState.minuteText}/>
         </div>
-      </div>
-    </form>
-  )
+
+        <div className="event-form__row">
+          <input
+            className="event-form__row-item"
+            type="text" name="eventName"
+            placeholder="Event Name"
+            onChange={onInputChange}
+            value={formState.eventNameText}
+          />
+        </div>
+
+        <div className="event-form__row">
+          <div className="event-form__save-btn-wrapper">
+            <button
+              type="submit"
+              className={cn("event-form__row-item", "event-form__save-btn", `${!formState.isFormInputValid && 'event-form__save-btn--disabled'}`)}
+              disabled={!formState.isFormInputValid}
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </form>
+    )
+  }
 }
 
 const Body = ({currentMonth, selectedDate, setTooltipState, isTooltipOpen, onDayClick, enableGrid, children}) => {
