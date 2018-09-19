@@ -1,0 +1,1855 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`allows to click on arrows to change selected month 1`] = `
+<div
+  class="calendar-container"
+>
+  <div
+    class="calendar"
+  >
+    <div
+      class="calendar-header calendar-row"
+    >
+      <div
+        class="calendar-left-arrow calendar-col calendar-col-left"
+      >
+        <div
+          class="calendar-icon"
+        >
+          chevron_left
+        </div>
+      </div>
+      <div
+        class="calendar-header-date calendar-col calendar-col-center"
+      >
+        <span>
+          September
+          <br>
+            
+          </br>
+          2018
+        </span>
+      </div>
+      <div
+        class="calendar-right-arrow calendar-col calendar-col-right"
+      >
+        <div
+          class="calendar-icon"
+        >
+          chevron_right
+        </div>
+      </div>
+    </div>
+    <div
+      class="calendar-days calendar-row"
+    >
+      <div
+        class="calendar-col calendar-col-center"
+      >
+        Su
+      </div>
+      <div
+        class="calendar-col calendar-col-center"
+      >
+        Mo
+      </div>
+      <div
+        class="calendar-col calendar-col-center"
+      >
+        Tu
+      </div>
+      <div
+        class="calendar-col calendar-col-center"
+      >
+        We
+      </div>
+      <div
+        class="calendar-col calendar-col-center"
+      >
+        Th
+      </div>
+      <div
+        class="calendar-col calendar-col-center"
+      >
+        Fr
+      </div>
+      <div
+        class="calendar-col calendar-col-center"
+      >
+        Sa
+      </div>
+    </div>
+    <div
+      class="calendar-body"
+    >
+      <div
+        class="calendar-row false"
+      >
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-162"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                26
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-163"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                27
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-164"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                28
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-165"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                29
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-166"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                30
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-167"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                31
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-168"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                1
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-row false"
+      >
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-169"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                2
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-170"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                3
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-171"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                4
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-172"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                5
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-173"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                6
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-174"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                7
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-175"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                8
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-row false"
+      >
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-176"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                9
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-177"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                10
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-178"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                11
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-179"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                12
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-180"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                13
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-181"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                14
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-182"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                15
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-row false"
+      >
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-183"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                16
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-184"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                17
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-185"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                18
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--selected calendar-cell--current"
+        >
+          <div
+            aria-describedby="tippy-tooltip-186"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                19
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-187"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                20
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-188"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                21
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-189"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                22
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-row false"
+      >
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-190"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                23
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-191"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                24
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-192"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                25
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-193"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                26
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-194"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                27
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-195"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                28
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-196"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                29
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-row false"
+      >
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-197"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                30
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-198"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                1
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-199"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                2
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-200"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                3
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-201"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                4
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-202"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                5
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-203"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                6
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="calendar-row"
+  >
+    <ul
+      class="calendar-controls calendar-col calendar-col-right"
+    >
+      <li
+        class="flush-state-link"
+      >
+        Flush State
+      </li>
+      <li
+        class="toggle-grid-link"
+      >
+        Toggle Grid
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`renders correctly 1`] = `
+<div
+  class="calendar-container"
+>
+  <div
+    class="calendar"
+  >
+    <div
+      class="calendar-header calendar-row"
+    >
+      <div
+        class="calendar-left-arrow calendar-col calendar-col-left"
+      >
+        <div
+          class="calendar-icon"
+        >
+          chevron_left
+        </div>
+      </div>
+      <div
+        class="calendar-header-date calendar-col calendar-col-center"
+      >
+        <span>
+          September
+          <br>
+            
+          </br>
+          2018
+        </span>
+      </div>
+      <div
+        class="calendar-right-arrow calendar-col calendar-col-right"
+      >
+        <div
+          class="calendar-icon"
+        >
+          chevron_right
+        </div>
+      </div>
+    </div>
+    <div
+      class="calendar-days calendar-row"
+    >
+      <div
+        class="calendar-col calendar-col-center"
+      >
+        Su
+      </div>
+      <div
+        class="calendar-col calendar-col-center"
+      >
+        Mo
+      </div>
+      <div
+        class="calendar-col calendar-col-center"
+      >
+        Tu
+      </div>
+      <div
+        class="calendar-col calendar-col-center"
+      >
+        We
+      </div>
+      <div
+        class="calendar-col calendar-col-center"
+      >
+        Th
+      </div>
+      <div
+        class="calendar-col calendar-col-center"
+      >
+        Fr
+      </div>
+      <div
+        class="calendar-col calendar-col-center"
+      >
+        Sa
+      </div>
+    </div>
+    <div
+      class="calendar-body"
+    >
+      <div
+        class="calendar-row false"
+      >
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-43"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                26
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-44"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                27
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-45"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                28
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-46"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                29
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-47"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                30
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-48"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                31
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-49"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                1
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-row false"
+      >
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-50"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                2
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-51"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                3
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-52"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                4
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-53"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                5
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-54"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                6
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-55"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                7
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-56"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                8
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-row false"
+      >
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-57"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                9
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-58"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                10
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-59"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                11
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-60"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                12
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-61"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                13
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-62"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                14
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-63"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                15
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-row false"
+      >
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-64"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                16
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-65"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                17
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-66"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                18
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--selected calendar-cell--current"
+        >
+          <div
+            aria-describedby="tippy-tooltip-67"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                19
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-68"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                20
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-69"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                21
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-70"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                22
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-row false"
+      >
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-71"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                23
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-72"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                24
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-73"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                25
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-74"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                26
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-75"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                27
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-76"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                28
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-77"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                29
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="calendar-row false"
+      >
+        <div
+          class="calendar-col calendar-col-center calendar-cell false"
+        >
+          <div
+            aria-describedby="tippy-tooltip-78"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                30
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-79"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                1
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-80"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                2
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-81"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                3
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-82"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                4
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-83"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                5
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--disabled"
+        >
+          <div
+            aria-describedby="tippy-tooltip-84"
+            class=""
+            data-original-title="undefined"
+            data-tooltipped=""
+            style="display: inline;"
+          >
+            <div
+              class="calendar-cell-inner"
+            >
+              <div>
+                6
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="calendar-row"
+  >
+    <ul
+      class="calendar-controls calendar-col calendar-col-right"
+    >
+      <li
+        class="flush-state-link"
+      >
+        Flush State
+      </li>
+      <li
+        class="toggle-grid-link"
+      >
+        Toggle Grid
+      </li>
+    </ul>
+  </div>
+</div>
+`;
