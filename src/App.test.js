@@ -7,7 +7,11 @@ import Calendar from './Calendar';
 import Enzyme, { mount  } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
+import { advanceTo } from 'jest-date-mock';
+
 beforeAll(() => {
+  advanceTo(new Date(2018, 8, 19, 0, 0, 0));
+
   Enzyme.configure({ adapter: new Adapter()  });
 });
 
@@ -45,9 +49,10 @@ it('allows to toggle grid', () => {
   const toggleGridLink = wrapper.find('.toggle-grid-link');
   toggleGridLink.simulate('click');
 
-  const calendarCell = wrapper.find('.calendar-cell').first();
+  let calendarCell = wrapper.find('.calendar-cell').first();
   expect(calendarCell.hasClass('calendar-cell--with-grid')).toBe(true);
 
   toggleGridLink.simulate('click');
+  calendarCell = wrapper.find('.calendar-cell').first();
   expect(calendarCell.hasClass('calendar-cell--with-grid')).toBe(false);
 });
