@@ -554,7 +554,7 @@ exports[`allows to click on arrows to change selected month 1`] = `
           </div>
         </div>
         <div
-          class="calendar-col calendar-col-center calendar-cell false calendar-cell--selected calendar-cell--current"
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--current"
         >
           <div
             aria-describedby="tippy-tooltip-186"
@@ -592,7 +592,7 @@ exports[`allows to click on arrows to change selected month 1`] = `
           </div>
         </div>
         <div
-          class="calendar-col calendar-col-center calendar-cell false"
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--selected"
         >
           <div
             aria-describedby="tippy-tooltip-188"
@@ -1481,7 +1481,7 @@ exports[`renders correctly 1`] = `
           </div>
         </div>
         <div
-          class="calendar-col calendar-col-center calendar-cell false calendar-cell--selected calendar-cell--current"
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--current"
         >
           <div
             aria-describedby="tippy-tooltip-67"
@@ -1519,7 +1519,7 @@ exports[`renders correctly 1`] = `
           </div>
         </div>
         <div
-          class="calendar-col calendar-col-center calendar-cell false"
+          class="calendar-col calendar-col-center calendar-cell false calendar-cell--selected"
         >
           <div
             aria-describedby="tippy-tooltip-69"

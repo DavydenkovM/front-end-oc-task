@@ -2,7 +2,7 @@ import 'js-polyfills/html';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Calendar from './Calendar';
+import Calendar from './index.js';
 
 import Enzyme, { mount  } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
